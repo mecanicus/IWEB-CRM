@@ -3,21 +3,20 @@ import React from 'react';
 export default class VisitListElement extends React.Component {
     render() {
 
-        let visitas = this.props.visits;
-        let id = visitas.map((visita,index) => {
-            let mykey = "" + index;
-            let unaVariable = visita["id"];
+        let visita = this.props.visita;
+        let vendedor= visita["Salesman"];
+        let cliente= visita["Customer"];
+        let fecha= visita["plannedFor"];
+        let nombreVendedor = vendedor["fullname"];
+        let nombreCliente = cliente["name"];
             return (
-                <li> {unaVariable}</li>
+                <div>
+                    <li>Fecha: {fecha}</li>
+                    <li>Vendedor: {nombreVendedor}</li>
+                    <li>Cliente: {nombreCliente}</li>
+                    <h3></h3>
+                </div>
             );
-        });
-        return (
-            <div>
-                <ul>
-                    {id}
-                </ul>
-            </div>
-        );
+
     }
-}
 }

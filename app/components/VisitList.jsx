@@ -8,9 +8,8 @@ export default class VisitList extends React.Component {
         let visitas = this.props.visits;
         let id = visitas.map((visita,index) => {
             let mykey = "" + index;
-            let unaVariable = visita["id"];
             return (
-                <li> {unaVariable}</li>
+                <VisitListElement visita = {visita} key={mykey}/>
             );
         });
         return (
