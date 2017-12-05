@@ -13,9 +13,16 @@ export default class VisitList extends React.Component {
         });
         return (
             <div>
-                <ul>
-                    {id}
-                </ul>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th><h2>Visitas</h2></th>
+                        </tr>
+                        <tr>
+                            <td>{id}</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         );
     }

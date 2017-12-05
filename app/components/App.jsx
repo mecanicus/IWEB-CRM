@@ -3,6 +3,7 @@ import './../assets/scss/main.scss';
 import VisitList from './VisitList';
 import { visits } from "./../assets/mock-data";
 import Detail from "./Detail";
+
 export default class App extends React.Component {
     constructor(props) {
         super(props);
@@ -17,12 +18,14 @@ export default class App extends React.Component {
         });
     }
 
-    render(){
+
+        render(){
 
         return (
             <div>
+                <Detail visits = {visits} indexVisita = {this.state.indexVisitaSeleccionada} />
                 <VisitList visits = {visits} visitaClickApp = {this.visitaClickApp}/>
-                <Detail visits = {visits} indexVisita = {this.state.indexVisitaSeleccionada}/>
+
 
             </div>
         );
