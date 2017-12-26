@@ -1,35 +1,73 @@
 import React from 'react';
 import './../assets/scss/main.scss';
 import VisitList from './VisitList';
-import { visits } from "./../assets/mock-data";
 import Detail from "./Detail";
 
+import $ from 'jquery';
 export default class App extends React.Component {
+
+    componentDidMount() {
+        let url = this.editaParametros();
+        this.peticionWeb(url);
+    }
     constructor(props) {
         super(props);
         this.state = {
-            indexVisitaSeleccionada : 2,
+            indexVisitaSeleccionada: null,
+            visits: null,
         };
         this.visitaClickApp = this.visitaClickApp.bind(this);
+        this.editaParametros = this.editaParametros.bind(this);
+        this.peticionWeb = this.peticionWeb.bind(this);
     }
-    visitaClickApp(index){
+    visitaClickApp(index) {
         this.setState({
-            indexVisitaSeleccionada : index,
+            indexVisitaSeleccionada: index,
         });
     }
 
+    editaParametros() {
+        let URL = 'https://dcrmt.herokuapp.com/api/visits/flattened?token=232a6ff08c235306c577';
+        let parametros = location.search;
+        let parametrosEditados = parametros.replace("?", "&");
+        return URL + parametrosEditados;
+    }
+    peticionWeb(url) {
+        $.ajax({
+            url: url,
+            dataType: 'json',
+            cache: false,
+            success: function(data) {
+                this.setState({
+                    visits: data,
+                });
+            }.bind(this),
+            error: function(xhr, status, err) {
+                console.error(url, status, err.toString());
+            },
+        });
+    }
 
-        render(){
-
+    render() {
+        if (this.state.visits === null) {
+            return (
+                <div id= 'cargando'>
+                    <img
+                        src="./assets/loader.svg"
+                        height="inherit"
+                        width="inherit"
+                    />
+                </div>
+            );
+        }
         return (
             <div>
-                <Detail visits = {visits} indexVisita = {this.state.indexVisitaSeleccionada} />
-                <VisitList visits = {visits} visitaClickApp = {this.visitaClickApp}/>
 
+                <Detail visits = {this.state.visits} indexVisita = {this.state.indexVisitaSeleccionada} />
+                <VisitList visits = {this.state.visits} visitaClickApp = {this.visitaClickApp}/>
 
             </div>
         );
     }
 }
-
 
