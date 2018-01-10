@@ -17,11 +17,8 @@ export default class TargetElement extends React.Component {
             <div>
 
                 <h4> Compañía : {companyName}</h4>
-                    <h3 />
                 <h4> Notes: {notes}</h4>
-                    <h3 />
                 <h4> Web: {companyWeb}</h4>
-                <h3 />
 
             </div>
         );

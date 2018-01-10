@@ -4,8 +4,13 @@
 },
   "parser": "babel-eslint",
   "plugins": [
-    "react"
+    "react",
+	"jsx-a11y"
   ],
+  "extends": [
+	"plugin:jsx-a11y/recommended"
+  ],
+
   "rules": {
 
     /*Possible Errors */

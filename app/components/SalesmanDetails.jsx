@@ -10,11 +10,8 @@ export default class SalesmanDetails extends React.Component {
             <div id = 'salesman'>
 
                 <h4> Nombre vendedor: {salesmanName}</h4>
-                <h3 />
                 <h4> Email vendedor: {salesmanEmail}</h4>
-                <h3 />
                 <h4> Notas vendedor: {salesmanNotes}</h4>
-                <h3 />
 
             </div>
         );

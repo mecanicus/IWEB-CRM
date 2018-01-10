@@ -11,13 +11,9 @@ export default class CustomerDetail extends React.Component {
             <div id = 'customer'>
 
                 <h4> Nombre cliente: {customerName}</h4>
-                <h3 />
                 <h4> Dirección cliente: {customerAdress}</h4>
-                <h3 />
                 <h4> Ciudad Cliente: {customerCity}</h4>
-                <h3 />
                 <h4> Teléfono Cliente: {customerPhone}</h4>
-                <h3 />
 
             </div>
         );

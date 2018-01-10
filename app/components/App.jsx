@@ -56,6 +56,7 @@ export default class App extends React.Component {
                         src="./assets/loader.svg"
                         height="inherit"
                         width="inherit"
+                        alt="Cargando..."
                     />
                 </div>
             );

@@ -31,12 +31,12 @@ const config = {
 
     module: {
         rules: [
-      // {
-      //   enforce: "pre",
-      //   test: /\.(es6|jsx|js)$/,
-      //   exclude: /node_modules/,
-      //   loader: "eslint-loader"
-      // },
+            {
+                enforce: "pre",
+                test: /\.(es6|jsx|js)$/,
+                exclude: /node_modules/,
+                loader: "eslint-loader",
+            },
             {
                 test: /\.es6$/,
                 exclude: /(node_modules|bower_components)/,
@@ -94,15 +94,15 @@ const config = {
     },
 
     plugins: [
-    /* new webpack.LoaderOptionsPlugin({
-      test: /\.js$/,
-      options: {
-        eslint: {
-          configFile: resolve(__dirname, '.eslintrc'),
-          cache: false,
-        }
-      },
-    }),*/
+        new webpack.LoaderOptionsPlugin({
+            test: /\.js$/,
+            options: {
+                eslint: {
+                    configFile: resolve(__dirname, '.eslintrc'),
+                    cache: false,
+                },
+            },
+        }),
         new webpack.optimize.ModuleConcatenationPlugin(),
         new CopyWebpackPlugin([{ from: 'vendors', to: 'vendors' }]),
         new OpenBrowserPlugin({ url: 'http://localhost:8080' }),
