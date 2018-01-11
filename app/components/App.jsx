@@ -4,7 +4,10 @@ import VisitList from './VisitList';
 import Detail from "./Detail";
 import { PageHeader } from 'react-bootstrap';
 import $ from 'jquery';
-export default class App extends React.Component {
+import { connect } from 'react-redux';
+import { botonClick } from './../reducers/actions';
+
+class App extends React.Component {
 
     componentDidMount() {
         let url = this.editaParametros();
@@ -13,7 +16,6 @@ export default class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            indexVisitaSeleccionada: null,
             visits: null,
         };
         this.visitaClickApp = this.visitaClickApp.bind(this);
@@ -21,9 +23,7 @@ export default class App extends React.Component {
         this.peticionWeb = this.peticionWeb.bind(this);
     }
     visitaClickApp(index) {
-        this.setState({
-            indexVisitaSeleccionada: index,
-        });
+        this.props.dispatch(botonClick(index));
     }
 
     editaParametros() {
@@ -64,11 +64,16 @@ export default class App extends React.Component {
         return (
             <div>
                 <PageHeader id = "cabecera">CRM <small>IWEB</small></PageHeader>
-                <Detail visits = {this.state.visits} indexVisita = {this.state.indexVisitaSeleccionada} />
+                <Detail visits = {this.state.visits} indexVisita = {this.props.indexVisitaSeleccionada} />
                 <VisitList visits = {this.state.visits} visitaClickApp = {this.visitaClickApp}/>
 
             </div>
         );
     }
 }
-
+function mapStateToProps(state) {
+    return {
+        indexVisitaSeleccionada: state.indexVisitaSeleccionada,
+    };
+}
+export default connect(mapStateToProps)(App);

@@ -16,8 +16,8 @@ export default class VisitDetail extends React.Component {
         }
         return (
             <div>
-                    <h3>Fecha Planeada: {fechaPlannedArreglada}</h3>
-                    <h3>Fecha Completada: {fechaFulfilledArreglada}</h3>
+                    <p>Fecha Planeada: {fechaPlannedArreglada}</p>
+                    <p>Fecha Completada: {fechaFulfilledArreglada}</p>
             </div>
         );
 
