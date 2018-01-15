@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
+import { Glyphicon } from 'react-bootstrap';
 
 export default class VisitListElement extends React.Component {
     constructor(props) {
@@ -19,13 +20,12 @@ export default class VisitListElement extends React.Component {
         let fechaArreglada = fecha.slice(0, 10);
         let nombreVendedor = vendedor.fullname;
         let nombreCliente = cliente.name;
-        let idVisita = visita.id;
         return (
                 <div>
-                    <Button id = {idVisita} className="boton" bsStyle="default" onClick={this.visitaClick}>
-                        <p>Fecha: {fechaArreglada}</p>
-                        <p>Vendedor: {nombreVendedor}</p>
-                        <p>Cliente: {nombreCliente}</p>
+                    <Button className="boton" bsStyle="default" onClick={this.visitaClick}>
+                        <p className="textoBoton"><Glyphicon glyph="shopping-cart" className="glyphVisits"/> Fecha: {fechaArreglada}</p>
+                        <p className="textoBoton"><Glyphicon glyph="briefcase" className="glyphVisits"/> Vendedor: {nombreVendedor}</p>
+                        <p className="textoBoton"><Glyphicon glyph="calendar" className="glyphVisits"/> Cliente: {nombreCliente}</p>
                     </Button>
                 </div>
         );

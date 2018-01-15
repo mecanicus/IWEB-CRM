@@ -2,7 +2,7 @@ import React from 'react';
 import './../assets/scss/main.scss';
 import VisitList from './VisitList';
 import Detail from "./Detail";
-import { PageHeader } from 'react-bootstrap';
+import { Navbar, Row, Col } from 'react-bootstrap';
 import $ from 'jquery';
 import { connect } from 'react-redux';
 import { botonClick } from './../reducers/actions';
@@ -63,9 +63,22 @@ class App extends React.Component {
         }
         return (
             <div>
-                <PageHeader id = "cabecera">CRM <small>IWEB</small></PageHeader>
-                <Detail visits = {this.state.visits} indexVisita = {this.props.indexVisitaSeleccionada} />
-                <VisitList visits = {this.state.visits} visitaClickApp = {this.visitaClickApp}/>
+                <Navbar inverse collapseOnSelect className="navbar">
+                    <Navbar.Header>
+                        <Navbar.Brand>
+                            <a>CRM <small>IWEB</small></a>
+                        </Navbar.Brand>
+                        <Navbar.Toggle />
+                    </Navbar.Header>
+                </Navbar>
+                    <Row>
+                        <Col xs={12} md={4} lg={4}>
+                            <VisitList visits = {this.state.visits} visitaClickApp = {this.visitaClickApp}/>
+                        </Col>
+                        <Col xs={12} md={8} lg={8}>
+                            <Detail visits = {this.state.visits} indexVisita = {this.props.indexVisitaSeleccionada} />
+                        </Col>
+                    </Row>
 
             </div>
         );

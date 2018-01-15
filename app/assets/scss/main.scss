@@ -11,10 +11,10 @@ h2{
   float : right;
 }
 #customer {
-  color : red;
+  color : darkred;
 }
 #salesman {
-  color : blue;
+  color : darkblue;
 }
 #cargando {
   position: absolute;
@@ -22,15 +22,10 @@ h2{
   left:40%;
 }
 #detalles {
-  position: absolute;
-  top:20%;
-  left:60%;
-}
-#detalles2 {
-  display:scroll;
-  position:fixed;
-  botton:320px;
-  right:200px;
+  overflow-y: scroll;
+  height: 84.95vh;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 #noVisitas {
   display:scroll;
@@ -39,10 +34,47 @@ h2{
   right:200px;;
 }
 #lista {
-  overflow: scroll;
-  height: 800px;
-  width: 35%;
+  overflow-y: scroll;
+  height: 79vh;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 .boton {
-  width : 100%;
+  width: 100%;
+}
+#imagen {
+  height: 100px;
+  width: 100px;
+}
+.textoBoton {
+  text-align: left;
+}
+#visitas {
+  padding-left: 15px;
+  font-size: 16pt;
+}
+#navbar {
+   margin-bottom: 0px;
+}
+.fechas {
+  font-size: 13pt;
+}
+#fechaaas {
+  margin-top: 5px;
+}
+#info {
+   font-size: 16pt;
+
+}
+#target {
+   font-size: 14.5pt;
+   margin-top: 15px;
+}
+#clienteTitulo {
+  font-size: 14.5pt;
+  margin-top: 15px;
+}
+#vendedorTitulo {
+  font-size: 14.5pt;
+  margin-top: 15px;
 }

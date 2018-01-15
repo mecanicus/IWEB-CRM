@@ -3,6 +3,7 @@ import VisitDetail from "./VisitDetail";
 import TargetDetail from "./TargetDetail";
 import CustomerDetail from "./CustomerDetail";
 import Salesman from "./SalesmanDetails";
+import { Row, Col, Glyphicon } from 'react-bootstrap';
 
 export default class Detail extends React.Component {
     render() {
@@ -20,10 +21,30 @@ export default class Detail extends React.Component {
         let salesmanDetail = visitaSeleccionada.Salesman;
         return (
             <div id = 'detalles'>
-                <VisitDetail visita = {visitaSeleccionada}/>
-                <TargetDetail targetDetail = {targetDetail}/>
-                <CustomerDetail customerDetail = {customerDetail}/>
-                <Salesman salesmanDetail ={salesmanDetail}/>
+                <Row>
+                    <Col xs={12} md={12} lg={12}>
+                        <p role="heading" aria-level="1" id="info"><Glyphicon glyph="info-sign" className="info"/><strong> Info</strong></p>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col xs={12} md={12} lg={12}>
+                        <VisitDetail visita = {visitaSeleccionada}/>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col xs={12} md={12} lg={12}>
+                        <TargetDetail targetDetail = {targetDetail}/>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col xs={12} md={6} lg={6}>
+                        <CustomerDetail customerDetail = {customerDetail}/>
+                    </Col>
+                    <Col xs={12} md={6} lg={6}>
+                        <Salesman salesmanDetail ={salesmanDetail}/>
+                    </Col>
+                </Row>
+
             </div>
         );
     }

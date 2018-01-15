@@ -1,4 +1,5 @@
 import React from 'react';
+import { Glyphicon } from 'react-bootstrap';
 
 export default class CustomerDetail extends React.Component {
     render() {
@@ -9,11 +10,11 @@ export default class CustomerDetail extends React.Component {
         let customerPhone = customer.phone1;
         return (
             <div id = 'customer'>
-
-                <h4> Nombre cliente: {customerName}</h4>
-                <h4> Dirección cliente: {customerAdress}</h4>
-                <h4> Ciudad Cliente: {customerCity}</h4>
-                <h4> Teléfono Cliente: {customerPhone}</h4>
+                <p id="clienteTitulo"><Glyphicon glyph="shopping-cart"/><strong> Cliente</strong></p>
+                <p><Glyphicon glyph="user"/> Nombre: {customerName}</p>
+                <p><Glyphicon glyph="home" className="infocustomer"/> Dirección: {customerAdress}</p>
+                <p><Glyphicon glyph="record"/> Ciudad: {customerCity}</p>
+                <p><Glyphicon glyph="earphone"/> Teléfono: {customerPhone}</p>
 
             </div>
         );

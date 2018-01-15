@@ -1,4 +1,5 @@
 import React from 'react';
+import { Image, Glyphicon } from 'react-bootstrap';
 
 export default class SalesmanDetails extends React.Component {
     render() {
@@ -8,11 +9,11 @@ export default class SalesmanDetails extends React.Component {
         let salesmanNotes = salesman.notes;
         return (
             <div id = 'salesman'>
-
-                <h4> Nombre vendedor: {salesmanName}</h4>
-                <h4> Email vendedor: {salesmanEmail}</h4>
-                <h4> Notas vendedor: {salesmanNotes}</h4>
-
+                <p id="vendedorTitulo"><Glyphicon glyph="briefcase"/><strong> Vendedor</strong></p>
+                <p><Glyphicon glyph="user"/> Nombre: {salesmanName}</p>
+                <p><Glyphicon glyph="envelope"/> Email: {salesmanEmail}</p>
+                <p><Glyphicon glyph="info-sign"/> Notas: {salesmanNotes}</p>
+                <p>{salesman.Photo ? <Image id = "imagen" circle alt="Vendedor" src={salesman.Photo.url}/> : null}</p>
             </div>
         );
     }

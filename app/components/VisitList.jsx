@@ -1,7 +1,6 @@
 import React from 'react';
 import VisitListElement from './VisitListElement';
-import { Table } from 'react-bootstrap';
-import { ButtonGroup } from 'react-bootstrap';
+import { ButtonGroup, Glyphicon } from 'react-bootstrap';
 export default class VisitList extends React.Component {
 
     render() {
@@ -13,9 +12,9 @@ export default class VisitList extends React.Component {
             );
         });
         return (
-            <div id ="lista">
-
-                <ButtonGroup vertical block>
+            <div>
+                <p id = "visitas"> <Glyphicon glyph="list" id="glyph"/> Visitas </p>
+                <ButtonGroup vertical block id ="lista">
                     {id}
                 </ButtonGroup>
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Glyphicon } from 'react-bootstrap';
 
 export default class TargetElement extends React.Component {
     render() {
@@ -16,9 +17,9 @@ export default class TargetElement extends React.Component {
         return (
             <div>
 
-                <h4> Compañía : {companyName}</h4>
-                <h4> Notes: {notes}</h4>
-                <h4> Web: {companyWeb}</h4>
+                <p><Glyphicon glyph="briefcase"/> Compañía : {companyName}</p>
+                <p><Glyphicon glyph="info-sign"/> Notes: {notes}</p>
+                <p><Glyphicon glyph="globe"/> Web: {companyWeb}</p>
 
             </div>
         );
